@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include "utiles.h"
 #include "ipv4.h"
-
+#include "ipv6.h"
+#include "uuid.h"
 
 int printUsage(char* MeLocation) {
 	printf("[!] Usage: %s <payload file path> [Option]\n", MeLocation);
@@ -37,7 +38,17 @@ int main(int argc, char* argv[])
 
 		// Generate the IPv4 representation of the shellcode
 		GenerateIpv4Output(PayloadData.pShell, (unsigned int)PayloadData.BytesNumber);
+	}else if (strcmp(argv[2], "Ipv6Fuscation") == 0 || strcmp(argv[2], "ipv6fuscation") == 0 || strcmp(argv[2], "ipv6") == 0 || strcmp(argv[2], "IPV6") == 0) {
+
+		// Generate the IPv6 representation of the shellcode
+		GenerateIpv6Output(PayloadData.pShell, (unsigned int)PayloadData.BytesNumber);
+	}else if (strcmp(argv[2], "UUIDFuscation") == 0 || strcmp(argv[2], "uuidfuscation") == 0 || strcmp(argv[2], "uuid") == 0 || strcmp(argv[2], "UUID") == 0) {
+
+		// Generate the UUID representation of the shellcode
+		GenerateUuidOutput(PayloadData.pShell, (unsigned int)PayloadData.BytesNumber);
 	}
+
+
 	else {
 		printf("[!] Unkown Input : %s \n", argv[2]);
 		return printUsage(argv[0]);

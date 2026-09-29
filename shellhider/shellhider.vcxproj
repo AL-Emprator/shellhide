@@ -144,7 +144,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ipv4.h" />
+    <ClInclude Include="ipv6.h" />
     <ClInclude Include="utiles.h" />
+    <ClInclude Include="uuid.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
