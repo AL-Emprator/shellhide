@@ -25,6 +25,26 @@ int main(int argc, char* argv[])
 		return printUsage(argv[0]);
 	}
 
+
+	if ((!ReadBinFile(argv[1])) || PayloadData.pShell == NULL || PayloadData.BytesNumber == NULL) {
+		system("PAUSE");
+		return -1;
+	}
+
+	printf("[i] Size Of Shellcode: %ld \n", (unsigned int)PayloadData.BytesNumber);
+
+	if (strcmp(argv[2], "Ipv4Fuscation") == 0 || strcmp(argv[2], "ipv4fuscation") == 0 || strcmp(argv[2], "ipv4") == 0 || strcmp(argv[2], "IPV4") == 0) {
+
+		// Generate the IPv4 representation of the shellcode
+		GenerateIpv4Output(PayloadData.pShell, (unsigned int)PayloadData.BytesNumber);
+	}
+	else {
+		printf("[!] Unkown Input : %s \n", argv[2]);
+		return printUsage(argv[0]);
+	}
+
+
+
     return 0;
 }
 
