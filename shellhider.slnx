@@ -3,5 +3,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="loader_ipv4/loader_ipv4.vcxproj" />
   <Project Path="shellhider/shellhider.vcxproj" />
 </Solution>
